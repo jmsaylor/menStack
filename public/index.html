@@ -4,9 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <title>Document</title>
   </head>
   <body>
-    <h1</h1>
+    <h1 id="app-title">Stanley Hotel</h1>
+      <div class="container">
+          <h3>Add Hotel</h3>
+        <form onsubmit="addHotel(event)">
+            <input type="text" placeholder="Hotel Name" id="name">
+        <input type="text" placeholder="Location" id="location">
+        <input type="text" placeholder="Room Number" id="roomnumber">
+        <input type="text" placeholder="Room Type" id="roomtype">
+        <input type="text" placeholder="Room Price" id="roomprice">
+        <input type="text" placeholder="Available" id="available">
+        <button class="btn waves-effect waves-light" type="submit" name="action">Add Hotel</button>
+        </form>
+        <!-- <button class="btn waves-effect waves-light" onclick="renderHotels()">Show All Hotels</button> -->
+        <div id="room"></div>
+        <script src="script.js"></script>
   </body>
 </html>
