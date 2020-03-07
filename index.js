@@ -5,6 +5,8 @@ const hotels = require("./routes/api/hotels");
 const app = express();
 
 app.use(express.json());
+const hotels = require("./routes/api/hotels");
+// const rooms = require("./routes/api/rooms");
 
 mongoose
   .connect(keys.mongoUri, {
@@ -17,6 +19,6 @@ mongoose
 app.use(express.static("public"));
 app.use("/api/hotels", hotels);
 
-app.listen(3000, () =>
-  console.log("listening on port 3000 - KimPossible Operational")
+app.listen(3100, () =>
+  console.log("listening on port 3100 - KimPossible Operational")
 );
