@@ -1,12 +1,12 @@
 const mongoose = require("mongoose");
 const express = require("express");
 const keys = require("./config/keys");
-const hotels = require("./routes/api/hotels");
 const app = express();
 
-app.use(express.json());
 const hotels = require("./routes/api/hotels");
-// const rooms = require("./routes/api/rooms");
+const rooms = require("./routes/api/rooms");
+
+app.use(express.json());
 
 mongoose
   .connect(keys.mongoUri, {
@@ -18,7 +18,10 @@ mongoose
 
 app.use(express.static("public"));
 app.use("/api/hotels", hotels);
+app.use("/api/addroom", rooms);
 
-app.listen(3100, () =>
-  console.log("listening on port 3100 - KimPossible Operational")
+const port = 3000;
+
+app.listen(port, () =>
+  console.log(`listening on port ${port} - KimPossible Operational`)
 );
