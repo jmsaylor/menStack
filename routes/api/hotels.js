@@ -48,8 +48,8 @@ router.post('/', async(req, res)=>{
         location: req.body.location,
         rooms:req.body.rooms
     })
-        const newHotel = await hotel.save();
-        res.status(201).json(newHotel);
+        await hotel.save();
+        res.status(201).json(hotel);
     } catch (err){
         res.status(400).json({message:err.message});
     }
