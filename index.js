@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const express = require("express");
 const keys = require("./config/keys");
+
 const app = express();
 
 const hotels = require("./routes/api/hotels");
