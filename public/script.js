@@ -1,5 +1,5 @@
 async function apiCall() {
-  let res = await fetch("http://localhost:3000/api/hotels");
+  let res = await fetch("/api/hotels");
   return res.json();
 }
 
@@ -86,7 +86,7 @@ function addHotel(e) {
   console.log(hotel);
 
   let xhrPost = new window.XMLHttpRequest();
-  xhrPost.open("POST", url);
+  xhrPost.open("POST", "api/hotels");
   xhrPost.setRequestHeader("Content-Type", "application/json");
   xhrPost.send(JSON.stringify(hotel));
 }

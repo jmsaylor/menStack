@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const { reservationSchema } = require("./Reservation");
 
 const roomSchema = new mongoose.Schema({
   room: {
@@ -10,9 +11,7 @@ const roomSchema = new mongoose.Schema({
   roomPrice: {
     type: Number
   },
-  available: {
-    type: Boolean
-  }
+  reservation: [reservationSchema]
 });
 
 const Room = mongoose.model("Room", roomSchema);

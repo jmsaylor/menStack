@@ -64,8 +64,7 @@ router.post("/rooms/add/:id", async (req, res) => {
     hotel.rooms.push({
       room: req.body.room,
       roomType: req.body.roomType,
-      roomPrice: req.body.roomPrice,
-      available: req.body.available
+      roomPrice: req.body.roomPrice
     });
     await hotel.save();
     res.status(200).json({ msg: "Room added." });
