@@ -10,7 +10,8 @@ router.post("/", async (req, res) => {
 
     for (let x = 0; x < hotel.rooms.length; x++) {
       if (hotel.rooms[x]._id == req.body.roomId) {
-        var selected = (hotel.rooms[x].reservation = {
+        var selected = hotel.rooms[x];
+        hotel.rooms[x].reservation.push({
           checkIn: req.body.checkIn,
           checkOut: req.body.checkOut
         });
@@ -24,8 +25,6 @@ router.post("/", async (req, res) => {
   }
 });
 
-module.exports = router;
-
 // Base GET route - Gives all rooms in a hotel without any filters (i.e. - availability, roomType, ...)
 router.get("/:id", async (req, res) => {
   try {
@@ -36,3 +35,5 @@ router.get("/:id", async (req, res) => {
     res.status(300).json({ msg: err.message });
   }
 });
+
+module.exports = router;
