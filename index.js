@@ -6,12 +6,11 @@ const app = express();
 
 const hotels = require("./routes/api/hotels");
 const rooms = require("./routes/api/rooms");
-const reservations = require("./routes/api/reservations");
 
 app.use(express.json());
 
 mongoose
-  .connect(keys.mongoTest, {
+  .connect(keys.mongoUri, {
     useNewUrlParser: true,
     useUnifiedTopology: true
   })
@@ -21,9 +20,8 @@ mongoose
 app.use(express.static("public"));
 app.use("/api/hotels", hotels);
 app.use("/api/addroom", rooms);
-app.use("/api/reserve", reservations);
 
-const port = 3000;
+const port = 4400;
 
 app.listen(port, () =>
   console.log(`listening on port ${port} - KimPossible Operational`)
