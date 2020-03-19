@@ -11,7 +11,7 @@ const roomSchema = new mongoose.Schema({
   roomPrice: {
     type: Number
   },
-  reservation: [reservationSchema]
+  reservations: [reservationSchema]
 });
 
 const Room = mongoose.model("Room", roomSchema);
